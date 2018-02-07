@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -53,3 +53,8 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails', '~> 5.0'
 gem 'webpacker', '~> 3.2'
+
+group :test do
+  gem 'coveralls', require: false
+  gem 'database_cleaner'
+end
