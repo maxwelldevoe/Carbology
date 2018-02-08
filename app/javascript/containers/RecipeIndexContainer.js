@@ -14,11 +14,11 @@ class RecipeIndexContainer extends Component {
     fetch('/api/v1/recipes.json')
     .then(response => {
         if (response.ok) {
-          return response;
+          return response
         } else {
           let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw(error);
+            error = new Error(errorMessage)
+          throw(error)
         }
       })
       .then(response => {
@@ -27,7 +27,7 @@ class RecipeIndexContainer extends Component {
       .then(body =>
         this.setState({ recipes: body }),
       )
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
+      .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
 
@@ -40,13 +40,13 @@ class RecipeIndexContainer extends Component {
         return(
           <RecipeTile
             key={ recipe.id }
+            id={ recipe.id }
             title={ recipe.title }
             description={ recipe.description }
           />
         )
       })
     }
-
     return(
       <div>
         { recipeTileComponents }
