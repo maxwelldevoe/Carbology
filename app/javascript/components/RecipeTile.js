@@ -5,7 +5,7 @@ const RecipeTile = (props) => {
   return(
     <Link to={`/recipes/${props.id}`}>
     <span className="recipe_tile">
-      <h1>{ props.title }</h1>
+      <h2>{ props.title }</h2>
       <p>{ props.description }</p>
     </span>
   </Link>

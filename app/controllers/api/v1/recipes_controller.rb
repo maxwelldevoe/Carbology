@@ -12,7 +12,7 @@ class Api::V1::RecipesController < ApplicationController
 
   def create
     recipe = Recipe.new(recipe_params)
-    if floof.save
+    if recipe.save
       render json: recipe
     else
       render json:{ error: recipe.errors.full_messages }, status: :unprocessable_entity
@@ -22,6 +22,6 @@ class Api::V1::RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :ingredients, :instructions)
+    params.require(:recipe).permit(:title, :ingredients, :instructions, :description)
   end
 end

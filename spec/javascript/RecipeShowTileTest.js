@@ -16,8 +16,8 @@ describe('Recipe Show Tile', () => {
     )
   })
 
-  it('should have a title within a <h1>', () => {
-    expect(wrapper.find('h1').at(0)).toIncludeText('hot dog')
+  it('should have a title within a <h3>', () => {
+    expect(wrapper.find('h3').at(0)).toIncludeText('hot dog')
   })
 
   it('should have a list of ingredients within a <ul>', () => {
@@ -32,7 +32,7 @@ describe('Recipe Show Tile', () => {
     expect(wrapper.find('div').at(1)).toHaveProp('className', 'lists')
   })
 
-  it('should have a h1 with the id title', () => {
-    expect(wrapper.find('h1')).toHaveProp('id', 'title')
+  it('should have a h3 with the id title', () => {
+    expect(wrapper.find('h3')).toHaveProp('id', 'title')
   })
 })
