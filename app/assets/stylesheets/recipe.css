@@ -3,8 +3,26 @@
   display: inline-block;
   text-align: center;
   border-radius: 5px;
-  margin: 25px;
+  width: 40%;
+  margin: 50px 0px 50px 100px;
   border: 1px solid black;
   background-color: white;
   padding: 5px;
+}
+
+.recipe_show_tile {
+  position: relative;
+  display: inline-block;
+  margin: 50px;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.lists {
+  float: right;
+}
+
+#title {
+  text-align: center;
+  font-size: 100px;
 }

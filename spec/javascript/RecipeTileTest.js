@@ -4,11 +4,11 @@ describe('Recipe Tile', () => {
   let wrapper
 
   beforeEach(() => {
-    jasmineEnzyme();
+    jasmineEnzyme()
 
     wrapper = mount(
       <RecipeTile
-        id={1}
+        id={ 1 }
         title='hot dog'
         description='ball park favorite'
       />
