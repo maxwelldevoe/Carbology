@@ -15,8 +15,8 @@ describe('Recipe Tile', () => {
     )
   })
 
-  it('should have a title within a <h1>', () => {
-    expect(wrapper.find('h1').at(0)).toIncludeText('hot dog')
+  it('should have a title within a <h2>', () => {
+    expect(wrapper.find('h2').at(0)).toIncludeText('hot dog')
   })
 
   it('should have a description within a <p>', () => {

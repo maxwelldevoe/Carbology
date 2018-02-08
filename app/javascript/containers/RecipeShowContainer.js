@@ -47,12 +47,12 @@ class RecipeShowContainer extends Component {
     let ingredientArray = []
     let instructionArray = []
     if(this.state.recipe.ingredients !== undefined) {
-      ingredientArray = this.state.recipe.ingredients.split(', ').map((ingredient) => {
+      ingredientArray = this.state.recipe.ingredients.split('; ').map((ingredient) => {
         return <li>{ ingredient }</li>
       })
     }
     if(this.state.recipe.instructions !== undefined) {
-      instructionArray = this.state.recipe.instructions.split(', ').map((instruction) => {
+      instructionArray = this.state.recipe.instructions.split('; ').map((instruction) => {
         return <li>{ instruction }</li>
       })
     }
