@@ -1,0 +1,33 @@
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 100;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+h1 a {
+  font-size: 70px;
+}
+
+.top-bar {
+  height: 100px;
+}
+
+.top-bar-section .has-dropdown a {
+  font-size: 20px;
+}
+
+.top-bar-section .has-dropdown a:hover {
+    border: solid 0.5px;
+}
+
+.top-bar-section .has-dropdown > a::after {
+  border-color: white rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
+#profile-photo {
+  height: 45px;
+  width: 45px;
+  border-radius: 10px;
+}
