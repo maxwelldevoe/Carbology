@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchInput, {createFilter} from 'react-search-input'
 import RecipeTile from '../components/RecipeTile'
+import { Link } from 'react-router'
 
 class RecipeIndexContainer extends Component {
   constructor(props) {
@@ -50,6 +51,9 @@ class RecipeIndexContainer extends Component {
     return(
       <div>
         { recipeTileComponents }
+        <Link to={ '/recipes/new' }>
+          <button className='button'>Add Recipe</button>
+        </Link>
       </div>
     )
   }
