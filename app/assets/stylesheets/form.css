@@ -16,3 +16,9 @@
 .clear-button {
   height: 20px;
 }
+
+.form-header {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Pacifico', cursive;
+}
