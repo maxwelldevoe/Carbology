@@ -1,21 +1,37 @@
+body {
+  background-image: url(http://viaggareaitalia.weebly.com/uploads/5/2/6/9/52697039/7143681_orig.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+}
+
 .recipe_tile {
+  font-family: 'Indie Flower', cursive;
   position: relative;
   display: inline-block;
   text-align: center;
-  border-radius: 5px;
   width: 40%;
   margin: 50px 0px 50px 100px;
-  border: 1px solid black;
+  border: 5px inset;
   background-color: white;
   padding: 5px;
+  color: black;
 }
 
 .recipe_show_tile {
+  font-family: 'Indie Flower', cursive;
   position: relative;
   display: inline-block;
-  margin: 50px;
+  margin-left: 50%;
+  margin-top: 20px;
   padding: 20px;
-  border: 2px solid black;
+  border: 5px inset;
+  background-image: url(https://previews.123rf.com/images/lilymur/lilymur1605/lilymur160500075/57110439-notebook-paper-background-vector.jpg);
+  background-size: cover;
+  font-weight: bold;
 }
 
 .lists {
@@ -25,4 +41,6 @@
 #title {
   text-align: center;
   font-size: 100px;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
 }
