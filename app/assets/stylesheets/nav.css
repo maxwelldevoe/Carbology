@@ -14,7 +14,7 @@ nav {
   height: 100px;
   position: fixed;
   width: 100%;
-  overflow: hidden;
+  overflow: inherit;
 }
 
 .top-bar {
