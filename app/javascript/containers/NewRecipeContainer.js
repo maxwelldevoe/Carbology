@@ -29,9 +29,8 @@ class NewRecipeContainer extends Component {
   }
 
   validateField(fieldName, input) {
-    let formattedInput = fieldName.replace(/_/, " ")
     if (input === '' || input === ' ') {
-      let newError = { [fieldName]: `You must provide a valid ${formattedInput}` }
+      let newError = { [fieldName]: `You must provide a valid ${fieldName}` }
       this.setState({ errors: Object.assign(this.state.errors, newError)})
     }
     else {
@@ -44,10 +43,10 @@ class NewRecipeContainer extends Component {
   handleSubmit(event) {
     event.preventDefault()
 
-    this.validateField("title", this.state.floof.title)
-    this.validateField("ingredients", this.state.floof.ingredients)
-    this.validateField("instructions", this.state.floof.instructions)
-    this.validateField("description", this.state.floof.description)
+    this.validateField('title', this.state.recipe.title)
+    this.validateField('ingredients', this.state.recipe.ingredients)
+    this.validateField('instructions', this.state.recipe.instructions)
+    this.validateField('description', this.state.recipe.description)
     if(Object.keys(this.state.errors).length === 0) {
       this.handleFormPayload()
     }
@@ -56,10 +55,10 @@ class NewRecipeContainer extends Component {
   handleFormPayload() {
     let formPayLoad = {
       recipe: {
-        title: this.state.title,
-        ingredients: this.state.ingredients,
-        instructions: this.state.instructions,
-        description: this.state.description
+        title: this.state.recipe.title,
+        ingredients: this.state.recipe.ingredients,
+        instructions: this.state.recipe.instructions,
+        description: this.state.recipe.description
       }
     }
     fetch('/api/v1/recipes', {
@@ -98,7 +97,7 @@ class NewRecipeContainer extends Component {
   }
 
   setFormDetail(key, value) {
-    let oldState = this.state.floof
+    let oldState = this.state.recipe
     let newState = Object.assign({}, oldState)
     newState[key] = value
     this.setState({
@@ -119,10 +118,10 @@ class NewRecipeContainer extends Component {
 
     return(
       <div>
-        { errorDiv }
         <form onSubmit={ this.handleSubmit } className="form-data">
           <p>{ this.state.message }</p>
-          <h1>Add a Recipe</h1>
+          <h1 className="form-title">Add a Recipe</h1>
+          { errorDiv }
           <TextField
             label="Title"
             value={ this.state.recipe.title }

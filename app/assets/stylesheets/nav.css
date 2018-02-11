@@ -10,8 +10,18 @@ h1 a {
   font-size: 70px;
 }
 
+nav {
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
 .top-bar {
   height: 100px;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
 }
 
 .top-bar-section .has-dropdown a {
