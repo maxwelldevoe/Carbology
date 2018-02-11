@@ -32,7 +32,7 @@ describe('Recipe Show Tile', () => {
     expect(wrapper.find('div').at(1)).toHaveProp('className', 'lists')
   })
 
-  it('should have a h3 with the id title', () => {
-    expect(wrapper.find('h3')).toHaveProp('id', 'title')
+  it('should have a h3 with the className title', () => {
+    expect(wrapper.find('h3')).toHaveProp('className', 'title')
   })
 })
