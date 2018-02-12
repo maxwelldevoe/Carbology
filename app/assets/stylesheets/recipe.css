@@ -1,11 +1,11 @@
 #index {
-  background-image: url(https://i.pinimg.com/originals/14/63/28/146328755794ed50180c8c1290faa54c.jpg);
+  background-image: url(http://ghk.h-cdn.co/assets/15/45/768x512/gallery-1446501191-dinner-party-spread.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   height: 100%;
-
+  overflow: scroll;
 }
 
 h2 {
@@ -13,7 +13,9 @@ h2 {
 }
 
 .tile-container {
-  height: 500px;
+  height: 100%;
+  padding-top: 100px;
+  overflow: hidden;
 }
 
 .recipe_tile {
@@ -21,30 +23,34 @@ h2 {
   position: relative;
   display: inline-block;
   text-align: center;
+  float: left;
   width: 40%;
-  margin: 150px 0px 0px 100px;
+  margin: 100px 0px 50px 100px;
   border: 5px inset;
+  border-radius: 5%;
   background-color: white;
   padding: 5px;
   color: black;
+  overflow: hidden;
 }
 
 .recipe_show_tile {
   font-family: 'Indie Flower', cursive;
+  font-weight: bold;
   position: relative;
   display: inline-block;
   margin-left: 50%;
   margin-right: 10px;
   margin-top: 105px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
   border: 5px inset;
   background-image: url(https://previews.123rf.com/images/lilymur/lilymur1605/lilymur160500075/57110439-notebook-paper-background-vector.jpg);
   background-size: cover;
-  font-weight: bold;
 }
 
-.lists {
-  float: right;
+.lists li {
+  font-size: 20px;
 }
 
 .title {
@@ -67,4 +73,8 @@ h2 {
   font-family: 'Indie Flower', cursive;
   font-weight: bold;
   font-size: 60px;
+}
+
+#food-image {
+  max-height: 300px;
 }
