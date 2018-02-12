@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SearchInput, {createFilter} from 'react-search-input'
-import RecipeTile from '../components/RecipeTile'
+import RecipeIndexBox from '../components/RecipeIndexBox'
 import { Link } from 'react-router'
 
 class RecipeIndexContainer extends Component {
@@ -33,24 +33,13 @@ class RecipeIndexContainer extends Component {
 
 
   render() {
-    let recipes = this.state.recipes,
-    recipeTileComponents
-
-    if (recipes !== []) {
-      recipeTileComponents = recipes.map((recipe) => {
-        return(
-          <RecipeTile
-            key={ recipe.id }
-            id={ recipe.id }
-            title={ recipe.title }
-            description={ recipe.description }
-          />
-        )
-      })
-    }
+    let recipes = this.state.recipes
+    
     return(
       <div>
-        { recipeTileComponents }
+        <RecipeIndexBox
+          recipeData={ recipes }
+        />
         <Link to={ '/recipes/new' }>
           <button className='button'>Add Recipe</button>
         </Link>
