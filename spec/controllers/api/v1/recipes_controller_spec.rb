@@ -22,28 +22,28 @@ RSpec.describe Api::V1::RecipesController, type: :controller do
 
   describe "POST#create" do
     it "creates a new recipe" do
-      recipe_to_be = { recipe: { title: "Burger", ingredients: "burger, bun, ketchup", instructions: "cook burger, toast bun, add ketchup", description: "another ball park favorite" }}
+      recipe_to_be = { title: "Burger", ingredients: "burger, bun, ketchup", instructions: "cook burger, toast bun, add ketchup", description: "another ball park favorite" }
       prev_count = Recipe.count
       post(:create, params: recipe_to_be)
       expect(Recipe.count).to eq(prev_count + 1)
     end
 
     it "should return the newly created recipe" do
-      recipe_to_be = { recipe: { title: "Burger", ingredients: "burger, bun, ketchup", instructions: "cook burger, toast bun, add ketchup", description: "another ball park favorite" }}
+      recipe_to_be = { title: "Burger", ingredients: "burger, bun, ketchup", instructions: "cook burger, toast bun, add ketchup", description: "another ball park favorite" }
       post(:create, params: recipe_to_be)
 
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
-      expect(returned_json["title"]).to eq(recipe_to_be[:recipe][:title])
-      expect(returned_json["ingredients"]).to eq(recipe_to_be[:recipe][:ingredients])
-      expect(returned_json["instructions"]).to eq(recipe_to_be[:recipe][:instructions])
-      expect(returned_json["description"]).to eq(recipe_to_be[:recipe][:description])
+      expect(returned_json["title"]).to eq(recipe_to_be[:title])
+      expect(returned_json["ingredients"]).to eq(recipe_to_be[:ingredients])
+      expect(returned_json["instructions"]).to eq(recipe_to_be[:instructions])
+      expect(returned_json["description"]).to eq(recipe_to_be[:description])
     end
 
     it "should return status 422 and errors if recipe is not created" do
-      recipe_to_be = { recipe: { title: "Hot Dog"}}
+      recipe_to_be = { title: "Hot Dog"}
       post(:create, params: recipe_to_be)
 
       returned_json = JSON.parse(response.body)

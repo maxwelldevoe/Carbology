@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import TextField from '../components/TextField'
+import Uploader from './Uploader'
 
 class NewRecipeContainer extends Component {
   constructor(props) {
@@ -10,16 +11,27 @@ class NewRecipeContainer extends Component {
         title: '',
         ingredients: '',
         instructions: '',
-        description: ''
+        description: '',
+        image: []
       },
       message: '',
       errors: {}
     }
+    this.acceptedFile = this.acceptedFile.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.validateField = this.validateField.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFormPayload = this.handleFormPayload.bind(this)
     this.handleClear = this.handleClear.bind(this)
+  }
+
+  acceptedFile(accepted) {
+    let oldState = this.state.recipe
+    let newState = Object.assign({}, oldState)
+    newState['image'] = accepted
+    this.setState({
+      recipe: newState
+    })
   }
 
   handleChange(event) {
@@ -53,19 +65,16 @@ class NewRecipeContainer extends Component {
   }
 
   handleFormPayload() {
-    let formPayLoad = {
-      recipe: {
-        title: this.state.recipe.title,
-        ingredients: this.state.recipe.ingredients,
-        instructions: this.state.recipe.instructions,
-        description: this.state.recipe.description
-      }
-    }
+    let formPayLoad = new FormData()
+    formPayLoad.append('title', this.state.recipe.title)
+    formPayLoad.append('ingredients', this.state.recipe.ingredients)
+    formPayLoad.append('instructions', this.state.recipe.instructions)
+    formPayLoad.append('description', this.state.recipe.description)
+    formPayLoad.append('image', this.state.recipe.image[0], this.state.recipe.image.name)
     fetch('/api/v1/recipes', {
       credentials: 'same-origin',
       method: 'POST',
-      body: JSON.stringify(formPayLoad),
-      headers: { 'Content-Type': 'application/json' }
+      body: formPayLoad
     })
     .then(response => {
       if (response.ok) {
@@ -89,7 +98,8 @@ class NewRecipeContainer extends Component {
         title: '',
         ingredients: '',
         instructions: '',
-        description: ''
+        description: '',
+        image: []
       },
       message: '',
       errors: {}
@@ -145,6 +155,9 @@ class NewRecipeContainer extends Component {
             value={ this.state.recipe.description }
             name="description"
             handleChange={ this.handleChange }
+          />
+          <Uploader
+            acceptFile={ this.acceptedFile }
           />
           <button id="clear" onClick={ this.handleClear }>Clear Form</button>
           <button className='button submit-button' onClick={ this.handleSubmit }>Submit</button>

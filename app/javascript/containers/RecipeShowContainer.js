@@ -60,6 +60,7 @@ class RecipeShowContainer extends Component {
       <div>
         <div className="recipe_show_tile">
           <RecipeShowTile
+            key={ recipeData.id }
             id={ recipeData.id }
             title={ recipeData.title }
             ingredients={ ingredientArray }
