@@ -11,6 +11,7 @@ describe('Recipe Tile', () => {
         id={ 1 }
         title='hot dog'
         description='ball park favorite'
+        image='imageurl'
       />
     )
   })
