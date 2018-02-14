@@ -7,8 +7,10 @@ class RecipeIndexContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      recipes: []
+      recipes: [],
+      searchTerm: ''
     }
+    this.searchHandler = this.searchHandler.bind(this)
   }
 
   componentDidMount() {
@@ -31,18 +33,37 @@ class RecipeIndexContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
+  searchHandler(event) {
+    let searchWord = event
+    this.setState({searchTerm: searchWord});
+  }
 
   render() {
     let recipes = this.state.recipes
-    
+    let recipeIndexBoxComponent
+
+    if (recipes !== []) {
+      recipes = this.state.recipes.filter((recipe) => {
+        return recipe.title.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) != -1;
+      })
+      recipeIndexBoxComponent = recipes.map((recipe) => {
+        if (recipe.length !== 0) {
+          return(
+            <RecipeIndexBox
+              recipeData={ recipes }
+            />
+          )
+        }
+      })
+    }
+
     return(
       <div>
-        <RecipeIndexBox
-          recipeData={ recipes }
+        <SearchInput className="search-input"
+          value={this.state.searchTerm}
+          onChange={this.searchHandler}
         />
-        <Link to={ '/recipes/new' }>
-          <button className='button'>Add Recipe</button>
-        </Link>
+        { recipeIndexBoxComponent }
       </div>
     )
   }
