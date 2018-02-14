@@ -50,6 +50,7 @@ class RecipeIndexContainer extends Component {
         if (recipe.length !== 0) {
           return(
             <RecipeIndexBox
+              key={ recipe.id }
               recipeData={ recipes }
             />
           )
