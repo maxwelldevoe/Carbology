@@ -65,6 +65,7 @@ class RecipeShowContainer extends Component {
             title={ recipeData.title }
             ingredients={ ingredientArray }
             instructions={ instructionArray }
+            user={ this.state.user }
           />
         </div>
       </div>

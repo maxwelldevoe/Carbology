@@ -39,6 +39,7 @@ class RecipeIndexContainer extends Component {
   }
 
   render() {
+    debugger
     let recipes = this.state.recipes
     let recipeIndexBoxComponent
 

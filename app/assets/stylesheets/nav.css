@@ -21,7 +21,7 @@ nav {
   height: 100px;
   position: fixed;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .top-bar-section .has-dropdown a {
