@@ -39,7 +39,6 @@ class RecipeIndexContainer extends Component {
   }
 
   render() {
-    debugger
     let recipes = this.state.recipes
     let recipeIndexBoxComponent
 
@@ -47,16 +46,10 @@ class RecipeIndexContainer extends Component {
       recipes = this.state.recipes.filter((recipe) => {
         return recipe.title.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) != -1;
       })
-      recipeIndexBoxComponent = recipes.map((recipe) => {
-        if (recipe.length !== 0) {
-          return(
+      recipeIndexBoxComponent =
             <RecipeIndexBox
-              key={ recipe.id }
               recipeData={ recipes }
             />
-          )
-        }
-      })
     }
 
     return(
