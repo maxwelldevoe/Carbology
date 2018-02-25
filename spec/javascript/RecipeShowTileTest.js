@@ -28,6 +28,10 @@ describe('Recipe Show Tile', () => {
     expect(wrapper.find('ol').at(0)).toIncludeText('boil hot dog, toast bun, add ketchup')
   })
 
+  it('should have a div with foundation parameters', () => {
+    expect(wrapper.find('div').at(0)).toHaveProp('className', 'small-12 large-8 columns')
+  })
+
   it('should have a div with the className lists', () => {
     expect(wrapper.find('div').at(1)).toHaveProp('className', 'lists')
   })

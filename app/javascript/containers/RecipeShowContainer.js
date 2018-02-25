@@ -58,7 +58,7 @@ class RecipeShowContainer extends Component {
     }
     return(
       <div>
-        <div className="recipe_show_tile">
+        <div className="recipe_show_tile small-12 large-offset-1 large-8 columns">
           <RecipeShowTile
             key={ recipeData.id }
             id={ recipeData.id }
