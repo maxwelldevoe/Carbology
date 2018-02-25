@@ -127,7 +127,7 @@ class NewRecipeContainer extends Component {
     }
 
     return(
-      <div>
+      <div className="small-12 large-offset-2 large-8">
         <form onSubmit={ this.handleSubmit } className="form-data">
           <p>{ this.state.message }</p>
           <h1 className="form-title">Add a Recipe</h1>
