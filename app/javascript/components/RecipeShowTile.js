@@ -2,7 +2,7 @@ import React from 'react'
 
 const RecipeShowTile = (props) => {
   return(
-    <div>
+    <div classname="small-12 large-8 columns">
       <h3 className="title">{ props.title }</h3>
       <div className="lists">
         <ul>{ props.ingredients }</ul>

@@ -14,7 +14,7 @@ const RecipeIndexBox = (props) => {
     )
   })
   return(
-    <div className="tile-container">
+    <div>
       { recipeTileComponents }
     </div>
   )

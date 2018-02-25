@@ -53,13 +53,13 @@ class RecipeIndexContainer extends Component {
     }
 
     return(
-      <div>
-        <SearchInput className="search-input"
-          value={this.state.searchTerm}
-          onChange={this.searchHandler}
-        />
-        { recipeIndexBoxComponent }
-      </div>
+        <div className="small-12 large-12 columns">
+          <SearchInput className="search-input"
+            value={this.state.searchTerm}
+            onChange={this.searchHandler}
+          />
+          { recipeIndexBoxComponent }
+        </div>
     )
   }
 }
