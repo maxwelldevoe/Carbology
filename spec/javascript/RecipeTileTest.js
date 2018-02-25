@@ -25,7 +25,7 @@ describe('Recipe Tile', () => {
   })
 
   it('should have a span with the className recipe_tile', () => {
-    expect(wrapper.find('span')).toHaveProp('className', 'recipe_tile')
+    expect(wrapper.find('span')).toHaveProp('className', 'recipe_tile large-offset-1 large-5 small-12 columns')
   })
 
   it('should have a link that links to the show page', () => {
